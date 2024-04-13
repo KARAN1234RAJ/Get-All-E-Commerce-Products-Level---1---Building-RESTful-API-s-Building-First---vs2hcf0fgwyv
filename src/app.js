@@ -13,12 +13,12 @@ app.use(express.json());
 app.get("/api/v1/products", (req, res) => {
   // console.log(products.length);
   if (products.length>0) {
-    res.status(200).json(products);
-    // res.status(200).send({
-    //   status: "success",
-    //   message: "Product fetched successfully",
-    //   data:products,
-    // });
+    // res.status(200).json(products);
+    res.status(200).send({
+      status: "success",
+      message: "Product fetched successfully",
+      data: { product: products }
+    });
   } else {
     res.status(404).send({ status: "failed", message: "Product not found" });
   }
