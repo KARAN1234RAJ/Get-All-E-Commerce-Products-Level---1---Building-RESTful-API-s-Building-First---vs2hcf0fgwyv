@@ -10,9 +10,9 @@ app.use(express.json());
 
 // Write GET endpoint for sending all the products to client here
 // Endpoint - /api/v1/products
-app.get("/products", (req, res) => {
+app.get("/api/v1/products", (req, res) => {
   // console.log(products.length);
-  if (products.length) {
+  if (products.length>0) {
     res.status(200).send({
       status: "success",
       message: "Product fetched successfully",
