@@ -16,7 +16,7 @@ app.get("/api/v1/products", (req, res) => {
     res.status(200).send({
       status: "success",
       message: "Product fetched successfully",
-      data:{product:products},
+      data:products,
     });
   } else {
     res.status(404).send({ status: "failed", message: "Product not found" });
